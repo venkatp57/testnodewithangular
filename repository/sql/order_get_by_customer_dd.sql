@@ -1,0 +1,1 @@
+SELECT Id, OrderNumber FROM [Order] WHERE CustomerId = @customerId

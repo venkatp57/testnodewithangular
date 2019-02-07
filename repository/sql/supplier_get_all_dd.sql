@@ -1,0 +1,1 @@
+SELECT Id, CompanyName AS 'SupplierName' FROM Supplier

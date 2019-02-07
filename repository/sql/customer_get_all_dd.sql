@@ -1,0 +1,1 @@
+SELECT Id, FirstName+ ' '+LastName AS 'CustomerName' FROM Customer ORDER BY FirstName
