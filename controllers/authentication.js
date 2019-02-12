@@ -4,13 +4,10 @@ config = require('../config/config'),
 loginrepo = require('../repository/loginrepository'),
 jwt = require('jsonwebtoken');
 
-
 var router = express.Router();
 
 router.post('/authenticate', (req, res)=>{
-
     let params = req.body;
-
     loginrepo.validateLogin(params.username, params.password)
                 .then( function( results ) {
                     console.log( results[0]);
@@ -27,6 +24,7 @@ router.post('/authenticate', (req, res)=>{
                     }                    
                 }, function( err ) {
                         console.log( "Something bad happened:", err );
+                        res.status(500).json({success:false, error:err});
                 });    
 });
 
